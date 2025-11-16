@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boost Your Productivity — Free Guide</title>
+    <style>
+      :root {
+        --accent: #0b79d0;
+        --accent-dark: #0664a6;
+        --bg: #f7f9fb;
+        --card: #ffffff;
+        --muted: #6b7280;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        margin: 0;
+        background: var(--bg);
+        color: #0f172a;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        max-width: 1000px;
+        margin: 48px auto;
+        padding: 24px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 400px;
+        gap: 32px;
+        align-items: start;
+      }
+      .hero {
+        background: linear-gradient(
+          180deg,
+          rgba(11, 121, 208, 0.06),
+          rgba(11, 121, 208, 0.02)
+        );
+        padding: 32px;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 30px;
+        margin: 0 0 16px;
+        line-height: 1.1;
+      }
+      p.lead {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 16px;
+      }
+      .bullets {
+        margin: 20px 0;
+        padding: 0;
+        list-style: none;
+      }
+      .bullets li {
+        margin: 12px 0;
+        padding-left: 30px;
+        position: relative;
+        font-size: 15px;
+      }
+      .bullets li:before {
+        content: "✔";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+        font-weight: bold;
+      }
+      .card {
+        background: var(--card);
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(12, 15, 20, 0.08);
+      }
+      label {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 6px;
+        color: var(--muted);
+      }
+      input[type="text"],
+      input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #e6edf3;
+        border-radius: 10px;
+        font-size: 15px;
+        margin-bottom: 12px;
+      }
+      .btn {
+        width: 100%;
+        background: var(--accent);
+        color: #fff;
+        padding: 14px;
+        border-radius: 10px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .btn:active {
+        transform: translateY(1px);
+      }
+      .muted-small {
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .mockup {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+      }
+      .mockup img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 40px rgba(14, 30, 60, 0.08);
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .container {
+          margin: 24px;
+          padding: 18px;
+        }
+      }
+      .trust {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-top: 16px;
+      }
+      .pill {
+        background: #eef6ff;
+        color: var(--accent);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 13px;
+        display: inline-block;
+        margin-bottom: 12px;
+      }
+      .success {
+        display: none;
+        background: #ecfdf5;
+        color: #065f46;
+        padding: 12px;
+        border-radius: 8px;
+        margin-top: 12px;
+        border: 1px solid #bbf7d0;
+        font-size: 14px;
+      }
+      footer {
+        margin-top: 32px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <div class="grid">
+        <section class="hero">
+          <div style="display: flex; flex-direction: column; gap: 24px">
+            <div>
+              <div class="pill">Free PDF Guide</div>
+              <h1>Boost Your Freelance Productivity in Just 10 Minutes</h1>
+              <p class="lead">
+                Discover 5 quick, practical strategies to save time, stay
+                focused, and get more done without stress.
+              </p>
+              <ul class="bullets">
+                <li>
+                  <strong>Save hours each week</strong> with simple
+                  time-blocking techniques
+                </li>
+                <li>
+                  <strong>Eliminate distractions</strong> and maintain deeper
+                  focus
+                </li>
+                <li>
+                  <strong>Prioritize effectively</strong> to work on high-impact
+                  tasks
+                </li>
+                <li>
+                  <strong>Build daily habits</strong> that increase long-term
+                  productivity
+                </li>
+                <li>
+                  <strong>Use tools smarter</strong> to finish tasks faster
+                </li>
+              </ul>
+            </div>
+            <div class="trust">
+              <div
+                class="card"
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+                  padding: 8px 12px;
+                "
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 12l2 2 4-4"
+                    stroke="#0b79d0"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span style="font-size: 14px; font-weight: 600; color: #0f172a"
+                  >Used by 1,000+ freelancers</span
+                >
+              </div>
+            </div>
+          </div>
+          <aside style="margin-top: 24px">
+            <div class="card">
+              <h3 style="margin: 0 0 12px">Get instant access</h3>
+              <p style="margin: 0 0 16px; color: var(--muted); font-size: 14px">
+                Enter your email and we'll send the PDF straight to your inbox.
+              </p>
+              <form action="/api/subscribe" method="POST">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Your name (optional)"
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your email"
+                  required
+                />
+                <button class="btn" type="submit">
+                  Download Your Free Guide
+                </button>
+                <div class="muted-small">No spam. Unsubscribe anytime.</div>
+                <div id="success" class="success">
+                  Thanks — check your inbox!
+                </div>
+              </form>
+              <hr
+                style="
+                  border: none;
+                  border-top: 1px solid #f1f5f9;
+                  margin: 16px 0;
+                "
+              />
+              <div style="font-size: 13px; color: var(--muted)">
+                Tip: Keep the form to one or two fields (name & email) for best
+                conversions.
+              </div>
+            </div>
+          </aside>
+        </section>
+        <div class="mockup card">
+          <img src="/assets/lead-magnet-mockup.png" alt="Lead magnet mockup" />
+        </div>
+      </div>
+      <footer>
+        Downloaded by freelancers around the world • Free PDF • No spam
+      </footer>
+    </main>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = form.name.value;
+        const email = form.email.value;
+        const res = await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email }),
+        });
+        const data = await res.json();
+        const successEl = document.getElementById("success");
+        successEl.innerText = data.message;
+        successEl.style.display = "block";
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
