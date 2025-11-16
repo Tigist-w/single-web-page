@@ -5,13 +5,14 @@ const path = require("path");
 
 // Connect to MongoDB
 const connectDB = async () => {
-  if (mongoose.connections[0].readyState) return; // already connected
+  if (mongoose.connections[0].readyState) return;
   await mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
 };
 
+// Subscriber schema
 const subscriberSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
@@ -33,27 +34,26 @@ const transporter = nodemailer.createTransport({
 });
 
 transporter.verify((error, success) => {
-  if (error) console.error("Nodemailer connection error:", error);
+  if (error) console.error("Nodemailer error:", error);
   else console.log("Nodemailer ready to send emails");
 });
 
-// Vercel serverless function
 module.exports = async (req, res) => {
   await connectDB();
 
   if (req.method !== "POST") {
-    return res.status(405).send({ message: "Only POST allowed" });
+    return res.status(405).json({ message: "Only POST allowed" });
   }
 
   try {
     const { name, email } = req.body;
-    if (!email) return res.status(400).send({ message: "Email is required" });
+    if (!email) return res.status(400).json({ message: "Email is required" });
 
     const existing = await Subscriber.findOne({ email });
     if (existing) {
       return res
         .status(400)
-        .send({ success: false, message: "Email already subscribed" });
+        .json({ success: false, message: "Email already subscribed" });
     }
 
     const subscriber = new Subscriber({ name, email });
@@ -76,24 +76,20 @@ module.exports = async (req, res) => {
       ],
     });
 
-    res
-      .status(200)
-      .send({
-        success: true,
-        message: "Thanks! Check your inbox for the PDF.",
-      });
+    res.status(200).json({
+      success: true,
+      message: "Thanks! Check your inbox for the PDF.",
+    });
   } catch (err) {
     console.error(err);
     if (err.code === 11000) {
       return res
         .status(400)
-        .send({ success: false, message: "Email already subscribed" });
+        .json({ success: false, message: "Email already subscribed" });
     }
-    res
-      .status(500)
-      .send({
-        success: false,
-        message: "Server error. Please try again later.",
-      });
+    res.status(500).json({
+      success: false,
+      message: "Server error. Please try again later.",
+    });
   }
 };
